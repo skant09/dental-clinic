@@ -4,7 +4,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+    <title>Rai Dental and Aesthetics</title>
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.png">
 
     <!-- update the version number as needed -->
     <script defer src="/__/firebase/11.7.1/firebase-app-compat.js"></script>
@@ -23,102 +24,7 @@
       to avoid connecting the SDK to running emulators.
     -->
     <script defer src="/__/firebase/init.js?useEmulator=true"></script>
-
-    <style>
-      :root {
-        --primary-color: #a6e3e9;
-        --accent-color: #cbf1f5;
-        --text-color: #333;
-        --bg-color: #ffffff;
-        --font-family: 'Open Sans', sans-serif;
-      }
-
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-
-      body {
-        font-family: var(--font-family);
-        color: var(--text-color);
-        background-color: var(--bg-color);
-        line-height: 1.6;
-      }
-
-      header {
-        background-color: var(--primary-color);
-        padding: 2rem;
-        text-align: center;
-      }
-
-      header h1 {
-        font-size: 2.5rem;
-        margin-bottom: 0.5rem;
-      }
-
-      .hero {
-        background: url('https://via.placeholder.com/1200x400?text=BrightSmile+Dental') no-repeat center/cover;
-        color: white;
-        padding: 4rem 2rem;
-        text-align: center;
-      }
-
-      .hero h2 {
-        font-size: 2rem;
-        margin-bottom: 1rem;
-      }
-
-      .cta-button {
-        background-color: var(--accent-color);
-        border: none;
-        padding: 1rem 2rem;
-        font-size: 1rem;
-        cursor: pointer;
-        border-radius: 5px;
-      }
-
-      section {
-        padding: 2rem;
-      }
-
-      .offers,
-      .testimonials,
-      .visit {
-        background-color: #f0fdfa;
-        margin-bottom: 2rem;
-        border-radius: 8px;
-      }
-
-      h2 {
-        font-size: 1.8rem;
-        margin-bottom: 1rem;
-      }
-
-      .offers ul {
-        list-style: disc;
-        padding-left: 1.5rem;
-      }
-
-      .testimonial {
-        margin-bottom: 1rem;
-      }
-
-      footer {
-        background-color: var(--primary-color);
-        text-align: center;
-        padding: 1rem;
-      }
-
-      @media (min-width: 768px) {
-
-        .offers,
-        .testimonials,
-        .visit {
-          padding: 2rem 4rem;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="./assets/css/style.css">
   </head>
 
   <body>
@@ -128,10 +34,126 @@
     </header>
 
     <section class="hero">
-      <h2>Welcome to Rai Dental and Aesthetics!</h2>
-      <p>Expert dental care in a warm, relaxing environment.</p>
-      <button class="cta-button">Book an Appointment</button>
+      <!-- <h2>Welcome to Rai Dental and Aesthetics!</h2> -->
+      <!-- <p>Expert dental care in a warm, relaxing environment.</p> -->
+      <!-- <button class="cta-button">Book an Appointment</button> -->
+      <div class="slideshow-container">
+        <div class="slide fade">
+          <img src="assets/images/slide1.jpeg" alt="Welcome to Rai Dental and Aesthetics">
+          <div class="text">Welcome to Rai Dental and Aesthetics!</div>
+        </div>
+        <div class="slide fade">
+          <img src="assets/images/slide2.webp" alt="Expert dental care">
+          <div class="text">Expert dental care in a warm, relaxing environment.</div>
+        </div>
+        <div class="slide fade">
+          <img src="assets/images/slide3.jpg" alt="Book an Appointment">
+          <div class="text">Your Smile, Our Passion. Book an Appointment Today!</div>
+        </div>
+        <!-- Navigation buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
     </section>
+    <style>
+      .slideshow-container {
+        position: relative;
+        max-width: 100%;
+        margin: auto;
+        overflow: hidden;
+      }
+
+      .slide {
+        display: block;
+        position: relative;
+      }
+
+      .slide img {
+        width: 100%;
+        height: auto;
+      }
+
+      .text {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: white;
+        font-size: 18px;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 10px 20px;
+        border-radius: 5px;
+      }
+
+      .prev,
+      .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        margin-top: -22px;
+        padding: 16px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+      }
+
+      .prev {
+        left: 0;
+        border-radius: 3px 0 0 3px;
+      }
+
+      .next {
+        right: 0;
+        border-radius: 0 3px 3px 0;
+      }
+
+      .prev:hover,
+      .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+
+      .fade {
+        animation: fade 1.5s ease-in-out;
+      }
+
+      @keyframes fade {
+        from {
+          opacity: 0.4;
+        }
+
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
+
+    <script>
+      let slideIndex = 0;
+
+      function showSlides() {
+        const slides = document.querySelectorAll('.slide');
+        slides.forEach(slide => slide.style.display = 'none');
+        slideIndex++;
+        if (slideIndex > slides.length) { slideIndex = 1; }
+        slides[slideIndex - 1].style.display = 'block';
+        setTimeout(showSlides, 5000); // Change slide every 5 seconds
+      }
+
+      function plusSlides(n) {
+        const slides = document.querySelectorAll('.slide');
+        slides.forEach(slide => slide.style.display = 'none');
+        slideIndex += n;
+        if (slideIndex > slides.length) { slideIndex = 1; }
+        if (slideIndex < 1) { slideIndex = slides.length; }
+        slides[slideIndex - 1].style.display = 'block';
+      }
+
+      document.addEventListener('DOMContentLoaded', showSlides);
+    </script>
 
     <section class="offers">
       <h2>What We Offer</h2>
